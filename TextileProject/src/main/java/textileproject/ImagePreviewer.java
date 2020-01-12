@@ -15,7 +15,7 @@ public class ImagePreviewer extends JLabel
     */
    public ImagePreviewer(JFileChooser chooser)
    {
-      setPreferredSize(new Dimension(100, 100));
+      setPreferredSize(new Dimension(200,200));
       setBorder(BorderFactory.createEtchedBorder());
 
       chooser.addPropertyChangeListener(event -> {

@@ -33,6 +33,7 @@ import javax.swing.filechooser.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -48,6 +49,7 @@ public class TextileProject extends javax.swing.JFrame {
         modelDukkandakiUrunler = new DefaultTableModel();
         modelDukkandakiUrunler.setColumnIdentifiers(columnsDukkandakiUrunler);
         dukkandakiUrunler = new DukkandakiUrunler();
+        aksesuarDurumu = new AksesuarDurumu();
         model = new DefaultTableModel();
         
         modelEtiket = new DefaultTableModel();
@@ -62,7 +64,10 @@ public class TextileProject extends javax.swing.JFrame {
         chooserlabel.setFileView(new FileIconView(filter, new ImageIcon("cyan-ball.gif")));
         initComponents();
         buttonMaliyetHesaplama.setIcon(buttonIconAyarlama("maaliyetHesaplama.png", buttonMaliyetHesaplama));
-               
+       /* final TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(model);
+        tableDukkandakiUrunler.setRowSorter(sorter);
+        sorter.setSortable(0, false);
+          */     
 
     }
 
@@ -75,14 +80,16 @@ public class TextileProject extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        KumasAdetDialog = new javax.swing.JDialog(this,"Kumaş Durumu");
+        KumasAdetDialog = new javax.swing.JDialog(this,"Kumaş Durumu",true);
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         buttonKumasEkle = new javax.swing.JButton();
         buttonTabloyuYükle = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
-        KumasEkleDialog = new javax.swing.JDialog(KumasAdetDialog,"Kumaş Ekle");
+        jLabel19 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        KumasEkleDialog = new javax.swing.JDialog(KumasAdetDialog,"Kumaş Ekle",true);
         jPanel3 = new javax.swing.JPanel();
         labelKumasTuruGiriniz = new javax.swing.JLabel();
         textFieldKumasTuruAdi = new javax.swing.JTextField();
@@ -91,7 +98,7 @@ public class TextileProject extends javax.swing.JFrame {
         textFieldKumasSayisi = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tamamButon = new javax.swing.JButton();
-        dialogAksesuarDurumu = new javax.swing.JDialog(this,"Aksesuar Durumu");
+        dialogAksesuarDurumu = new javax.swing.JDialog(this,"Aksesuar Durumu",true);
         panelAksesuarDurumu = new javax.swing.JPanel();
         comboBoxAksesuarCesitleri = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
@@ -99,7 +106,7 @@ public class TextileProject extends javax.swing.JFrame {
         tableAksesuarlar = new javax.swing.JTable();
         buttonAksesuarEkle = new javax.swing.JButton();
         buttonAksesuarTabloYukle = new javax.swing.JButton();
-        dialogFermuarEkle = new javax.swing.JDialog(dialogAksesuarDurumu);
+        dialogFermuarEkle = new javax.swing.JDialog(dialogAksesuarDurumu,true);
         jPanel4 = new javax.swing.JPanel();
         labelFermuarBoyu = new javax.swing.JLabel();
         textFieldFermuarBoyu = new javax.swing.JTextField();
@@ -108,20 +115,21 @@ public class TextileProject extends javax.swing.JFrame {
         textFieldFermuarAdet = new javax.swing.JTextField();
         labelFermuarAdet = new javax.swing.JLabel();
         buttonTamamFermuar = new javax.swing.JButton();
-        dialogAksesuarEkle = new javax.swing.JDialog(dialogAksesuarDurumu);
+        dialogAksesuarEkle = new javax.swing.JDialog(dialogAksesuarDurumu,true);
         labelAksesuarTuru = new javax.swing.JLabel();
         textFieldAksesuarTuru = new javax.swing.JTextField();
         labelAksesuarSayisi = new javax.swing.JLabel();
         textFieldAksesuarSayisi = new javax.swing.JTextField();
         buttonAksesuarTamam = new javax.swing.JButton();
-        dialogDukkandakiUrunler = new javax.swing.JDialog(this,"Dükkandaki Ürünler");
+        dialogDukkandakiUrunler = new javax.swing.JDialog(this,"Dükkandaki Ürünler",true);
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableDukkandakiUrunler = new javax.swing.JTable();
         labelUrunResim = new javax.swing.JLabel();
         buttonFotoDegistir = new javax.swing.JButton();
         buttonDukkandakiUruneModelEkle = new javax.swing.JButton();
-        dialogDukkanaUrunEkle = new javax.swing.JDialog();
+        buttonDukkankadiUrunlerTabloSil = new javax.swing.JButton();
+        dialogDukkanaUrunEkle = new javax.swing.JDialog(dialogDukkandakiUrunler,"Ürün ekle",true);
         jPanel6 = new javax.swing.JPanel();
         labelDukkanaUrunModelIsmi = new javax.swing.JLabel();
         labelDukkanaUrunKumasTuru = new javax.swing.JLabel();
@@ -134,14 +142,14 @@ public class TextileProject extends javax.swing.JFrame {
         textfieldDukkanaUrunToplamAdet = new javax.swing.JTextField();
         labelDukkandakiUrunModelResmi = new javax.swing.JLabel();
         buttonDukkanaUrunModelResmiSec = new javax.swing.JButton();
-        dialogMaliyetHesaplama = new javax.swing.JDialog(this,"Maliyet Hesaplama");
+        dialogMaliyetHesaplama = new javax.swing.JDialog(this,"Maliyet Hesaplama",true);
         panelModelEkleme = new javax.swing.JPanel();
         buttonModelEkle = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableModelBilgileri = new javax.swing.JTable();
         buttonModelBilgileriDüzenle = new javax.swing.JButton();
         buttonModelSil = new javax.swing.JButton();
-        dialogModelEkleme = new javax.swing.JDialog(dialogMaliyetHesaplama,"Model Ekle");
+        dialogModelEkleme = new javax.swing.JDialog(dialogMaliyetHesaplama,"Model Ekle",true);
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -211,10 +219,10 @@ public class TextileProject extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonKumasEkle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonTabloyuYükle, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonTabloyuYükle, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
         jPanel2Layout.setVerticalGroup(
@@ -230,9 +238,20 @@ public class TextileProject extends javax.swing.JFrame {
 
         table.setModel(model
         );
-        model.setColumnIdentifiers(columns);
+        model.setColumnIdentifiers(KumasTopucolumns);
         table.setModel(model);
         jScrollPane1.setViewportView(table);
+
+        jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 131, 255));
+        jLabel19.setText("Sütun sil");
+
+        jButton1.setText("Sil");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout KumasAdetDialogLayout = new javax.swing.GroupLayout(KumasAdetDialog.getContentPane());
         KumasAdetDialog.getContentPane().setLayout(KumasAdetDialogLayout);
@@ -240,14 +259,23 @@ public class TextileProject extends javax.swing.JFrame {
             KumasAdetDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
+            .addGroup(KumasAdetDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         KumasAdetDialogLayout.setVerticalGroup(
             KumasAdetDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(KumasAdetDialogLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KumasAdetDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         labelKumasTuruGiriniz.setText("Kumaş Türünü Giriniz");
@@ -345,6 +373,8 @@ public class TextileProject extends javax.swing.JFrame {
         comboBoxAksesuarCesitleri.addItem("Etiket");
         comboBoxAksesuarCesitleri.addItem("Kart");
         comboBoxAksesuarCesitleri.addItem("Arma");
+        comboBoxAksesuarCesitleri.setSelectedIndex(0);
+        getName = comboBoxAksesuarCesitleri.getItemAt(comboBoxAksesuarCesitleri.getSelectedIndex());
         comboBoxAksesuarCesitleri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxAksesuarCesitleriActionPerformed(evt);
@@ -354,6 +384,7 @@ public class TextileProject extends javax.swing.JFrame {
         jLabel5.setText("Aksesuarlar :");
 
         tableAksesuarlar.setModel(new javax.swing.table.DefaultTableModel());
+        tableAksesuarlar.setSelectionForeground(new java.awt.Color(0, 204, 204));
         jScrollPane4.setViewportView(tableAksesuarlar);
 
         buttonAksesuarEkle.setText("Aksesuar Ekle");
@@ -363,7 +394,7 @@ public class TextileProject extends javax.swing.JFrame {
             }
         });
 
-        buttonAksesuarTabloYukle.setText("Yükle");
+        buttonAksesuarTabloYukle.setText("Tablo Sil");
         buttonAksesuarTabloYukle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAksesuarTabloYukleActionPerformed(evt);
@@ -381,12 +412,10 @@ public class TextileProject extends javax.swing.JFrame {
                 .addComponent(comboBoxAksesuarCesitleri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonAksesuarTabloYukle)
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
                 .addComponent(buttonAksesuarEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(panelAksesuarDurumuLayout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
         );
         panelAksesuarDurumuLayout.setVerticalGroup(
             panelAksesuarDurumuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,16 +474,18 @@ public class TextileProject extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelFermuarAdet, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelFermuarRengi, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelFermuarBoyu, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(textFieldFermuarRengi)
+                    .addComponent(labelFermuarBoyu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelFermuarRengi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelFermuarAdet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(textFieldFermuarBoyu, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                    .addComponent(textFieldFermuarAdet))
-                .addContainerGap(32, Short.MAX_VALUE))
-            .addComponent(buttonTamamFermuar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(textFieldFermuarAdet)
+                    .addComponent(textFieldFermuarRengi))
+                .addGap(31, 31, 31))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(buttonTamamFermuar, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -530,17 +561,32 @@ public class TextileProject extends javax.swing.JFrame {
                 .addComponent(buttonAksesuarTamam, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        dialogDukkandakiUrunler.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                dialogDukkandakiUrunlerMousePressed(evt);
+            }
+        });
+
         tableDukkandakiUrunler.setModel(modelDukkandakiUrunler);
         tableDukkandakiUrunler.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableDukkandakiUrunlerMouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tableDukkandakiUrunlerMousePressed(evt);
+            }
+        });
+        tableDukkandakiUrunler.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tableDukkandakiUrunlerKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tableDukkandakiUrunlerKeyTyped(evt);
+            }
         });
         jScrollPane3.setViewportView(tableDukkandakiUrunler);
 
-        labelUrunResim.setIcon(new ImageIcon("Neptune.gif"));
-
-        buttonFotoDegistir.setText("Değiştir");
+        buttonFotoDegistir.setText("Fotoğrafı Değiştir");
         buttonFotoDegistir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonFotoDegistirActionPerformed(evt);
@@ -554,6 +600,13 @@ public class TextileProject extends javax.swing.JFrame {
             }
         });
 
+        buttonDukkankadiUrunlerTabloSil.setText("Tablo Sil");
+        buttonDukkankadiUrunlerTabloSil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDukkankadiUrunlerTabloSilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -562,9 +615,10 @@ public class TextileProject extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonFotoDegistir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonDukkandakiUruneModelEkle, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(buttonFotoDegistir, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                    .addComponent(buttonDukkandakiUruneModelEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonDukkankadiUrunlerTabloSil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelUrunResim, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -572,14 +626,16 @@ public class TextileProject extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(labelUrunResim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(buttonFotoDegistir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(buttonDukkandakiUruneModelEkle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonDukkankadiUrunlerTabloSil)
+                        .addGap(18, 31, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(labelUrunResim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -730,11 +786,11 @@ public class TextileProject extends javax.swing.JFrame {
             .addGroup(panelModelEklemeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(buttonModelEkle)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonModelBilgileriDüzenle, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(76, 76, 76)
                 .addComponent(buttonModelSil, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
         );
         panelModelEklemeLayout.setVerticalGroup(
             panelModelEklemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -863,7 +919,7 @@ public class TextileProject extends javax.swing.JFrame {
 
         buttonModelMaliyetEkle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         buttonModelMaliyetEkle.setForeground(new java.awt.Color(0, 0, 255));
-        buttonModelMaliyetEkle.setText("Tamam");
+        buttonModelMaliyetEkle.setText("Hesapla");
         buttonModelMaliyetEkle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonModelMaliyetEkleActionPerformed(evt);
@@ -945,8 +1001,7 @@ public class TextileProject extends javax.swing.JFrame {
                             .addGroup(dialogModelEklemeLayout.createSequentialGroup()
                                 .addComponent(textFieldModelIsmi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textFieldKumasBirimFiyat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)))
+                                .addComponent(textFieldKumasBirimFiyat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(dialogModelEklemeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1208,6 +1263,47 @@ public class TextileProject extends javax.swing.JFrame {
         modelModelBilgi.removeRow(tableModelBilgileri.getSelectedRow());
         tableModelBilgileri.setModel(modelModelBilgi);
     }
+    public Object [][] aksesuarDialogundakiBilgiler(File file,DefaultTableModel model)
+    {
+        Object [][] aksesuarDiziBilgileri = new Object[model.getRowCount()][model.getColumnCount()];
+        if(!file.exists())
+        {
+            try {
+                file.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+            
+                        
+        }
+        try {
+ 
+            
+            FileReader reader = new FileReader(file);
+            BufferedReader br = new BufferedReader(reader);
+            
+            Object[] lines = br.lines().toArray();
+            
+            for (int i = 0; i <lines.length; i++)
+            {
+             String[] row = lines[i].toString().split(" ");
+                System.out.println(Arrays.toString(row));
+             aksesuarDiziBilgileri[i] = row;
+             try {
+                    br.close();
+                    reader.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      System.out.println("aksesuarDiziBilgileri =" + Arrays.toString(aksesuarDiziBilgileri));
+        return aksesuarDiziBilgileri;
+    }
+    
     private Object [][] modelBilgileriDuzenleArray(String[] duzenlenenRow)
     {
         if(!fileModelDuzenleBilgileri.exists())
@@ -1254,7 +1350,7 @@ public class TextileProject extends javax.swing.JFrame {
                     }
                     i++;
                 }
-             row[i] = lines[i].toString().split(" ");
+             row[i] = lines[i].toString().split("tF3sjrG2dB");
                 
                 System.out.println("düzenleme row[i] = "+Arrays.toString( row[i]));
                 System.out.println("düzenleme row ="+Arrays.deepToString(row));
@@ -1435,88 +1531,7 @@ public class TextileProject extends javax.swing.JFrame {
             Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
         }    
          }
-    private void fermuarTableReader() 
-    {
-       
-        if(!fileFermuar.exists())
-        {
-            try {
-                fileFermuar.createNewFile();
-            } catch (IOException ex) {
-                Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-            }
-           /* JFileChooser chooser = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("Text field","txt");
-            chooser.setCurrentDirectory(new File("."));
-            chooser.setFileFilter(filter);
-            chooser.showOpenDialog(this);
-            String path = chooser.getSelectedFile().getPath();
-            fileFermuar = new File(path);*/
-                        
-        }
-        try {
- 
-            
-            FileReader reader = new FileReader(fileFermuar);
-            BufferedReader br = new BufferedReader(reader);
-            
-            Object[] lines = br.lines().toArray();
-            
-            for (int i = 0; i <lines.length; i++)
-            {
-             String[] row = lines[i].toString().split(" ");
-                System.out.println(Arrays.toString(row));
-             modelFermuar.addRow(row);
-             try {
-                    br.close();
-                    reader.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        fermuarYuklemeDurumu =false;
-    }
-    private void etiketTableReader()
-    {
-        if(!fileEtiket.exists())
-        {
-            try {
-                fileEtiket.createNewFile();
-            } catch (IOException ex) {
-                Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            /*JFileChooser chooser = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("Text field","txt");
-            chooser.setCurrentDirectory(new File("."));
-            chooser.setFileFilter(filter);
-            chooser.showOpenDialog(this);
-            String path = chooser.getSelectedFile().getPath();
-            fileEtiket = new File(path);*/
-                        
-        }
-        try {
-            
-            FileReader reader = new FileReader(fileEtiket);
-            BufferedReader br = new BufferedReader(reader);
-            
-            Object[] lines = br.lines().toArray();
-            
-            for (int i = 0; i <lines.length; i++)
-            {
-             String[] row = lines[i].toString().split(" ");
-                System.out.println(Arrays.toString(row));
-             modelEtiket.addRow(row);
-             
-             
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        etiketYuklemeDurumu =false;
-    }
+   
     private boolean StringContainsANumber(String s)
     {
         try {
@@ -1551,81 +1566,7 @@ public class TextileProject extends javax.swing.JFrame {
         System.out.println("Çalıştı 2");
         return true;
     }
-    private void kartTableReader()
-    {
-       
-         if(!fileKart.exists())
-        {
-            try {
-                fileKart.createNewFile();
-            } catch (IOException ex) {
-                Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-            }
-           /* JFileChooser chooser = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("Text field","txt");
-            chooser.setCurrentDirectory(new File("."));
-            chooser.setFileFilter(filter);
-            chooser.showOpenDialog(this);
-            String path = chooser.getSelectedFile().getPath();
-            fileKart = new File(path);*/
-                        
-        }
-        try {
-            
-            FileReader reader = new FileReader(fileKart);
-            BufferedReader br = new BufferedReader(reader);
-            
-            Object[] lines = br.lines().toArray();
-            
-            for (int i = 0; i <lines.length; i++)
-            {
-             String[] row = lines[i].toString().split(" ");
-                System.out.println(Arrays.toString(row));
-             modelKart.addRow(row);
-             
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        kartYuklemeDurumu = false;
-    }
-    private  void armaTableReader()
-    {
-         if(!fileArma.exists())
-        {
-            try {
-                fileArma.createNewFile();
-            } catch (IOException ex) {
-                Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            /*JFileChooser chooser = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("Text field","txt");
-            chooser.setCurrentDirectory(new File("."));
-            chooser.setFileFilter(filter);
-            chooser.showOpenDialog(this);
-            String path = chooser.getSelectedFile().getPath();
-            fileArma = new File(path);*/
-                        
-        }
-        try {
-            
-            FileReader reader = new FileReader(fileArma);
-            BufferedReader br = new BufferedReader(reader);
-            
-            Object[] lines = br.lines().toArray();
-            
-            for (int i = 0; i <lines.length; i++)
-            {
-             String[] row = lines[i].toString().split(" ");
-                System.out.println(Arrays.toString(row));
-             modelArma.addRow(row);
-             
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        armaYuklemeDurumu = false;
-    }
+   
     private void textFieldKumasRengiAdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldKumasRengiAdiActionPerformed
 
     }//GEN-LAST:event_textFieldKumasRengiAdiActionPerformed
@@ -1649,20 +1590,23 @@ public class TextileProject extends javax.swing.JFrame {
         }
               
     }//GEN-LAST:event_buttonKumasTopuEkleActionPerformed
-    KumasAdetDialog.setVisible(true);
+        KumasAdetDialog.pack();
+        KumasAdetDialog.setVisible(true);
         KumasAdetDialog.pack();
     }
     private void buttonKumasEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKumasEkleActionPerformed
+        KumasEkleDialog.pack();
         KumasEkleDialog.setVisible(true);
         KumasEkleDialog.pack();
     }//GEN-LAST:event_buttonKumasEkleActionPerformed
 
     private void tamamButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tamamButonActionPerformed
         KumasEkleDialog.setVisible(false);
-              Object []rows = new Object[3];
+              Object []rows = new Object[4];
               rows[0] = textFieldKumasTuruAdi.getText();
               rows[1] = textFieldKumasRengiAdi.getText();
               rows[2] = textFieldKumasSayisi.getText();
+              rows[3] =LocalDate.now();
               if(!rows[0].equals("")&&!rows[1].equals("")&&!rows[2].equals(""))
               {
               model.addRow(rows);
@@ -1697,7 +1641,7 @@ public class TextileProject extends javax.swing.JFrame {
             
             for (int i = 0; i <lines.length; i++)
             {
-             String[] row = lines[i].toString().split(" ");
+             String[] row = lines[i].toString().split("tF3sjrG2dB");
              model.addRow(row);
              
             }
@@ -1722,53 +1666,29 @@ public class TextileProject extends javax.swing.JFrame {
     private void comboBoxAksesuarCesitleriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxAksesuarCesitleriActionPerformed
        
         getName = comboBoxAksesuarCesitleri.getItemAt(comboBoxAksesuarCesitleri.getSelectedIndex());
-         getIndex = comboBoxAksesuarCesitleri.getSelectedIndex();
+        getIndex = comboBoxAksesuarCesitleri.getSelectedIndex();
         System.out.println(getName);
-        switch(comboBoxAksesuarCesitleri.getSelectedIndex())
+        switch(getIndex)
         {
-            case 0:
+                case 0:
                 //Fermuarlar
-              
-                
-                modelFermuar.setColumnIdentifiers(columnsFermuar);
-                tableAksesuarlar.setModel(modelFermuar);
-                if(fermuarYuklemeDurumu)
-                {
-                  fermuarTableReader();
-                }
+               
+                aksesuarDurumu.comboBoxAksesuarDurumu(getIndex, modelFermuar, tableAksesuarlar, columnsFermuar);
                 break;
-            case 1:
+                case 1:
                 //Etiketler
-           
                 
-                modelEtiket.setColumnIdentifiers( columnsEtiket);
-                tableAksesuarlar.setModel(modelEtiket);
-                if(etiketYuklemeDurumu)
-                {
-                    etiketTableReader();
-                }
+                aksesuarDurumu.comboBoxAksesuarDurumu(getIndex, modelEtiket, tableAksesuarlar, columnsEtiket);
                 break;
                 case 2:
                     //Kartlar
-                    
-                   
-                    modelKart.setColumnIdentifiers( columnsEtiket);
-                tableAksesuarlar.setModel(modelKart);
-                 if(kartYuklemeDurumu)
-                    {
-                        kartTableReader();
-                    }
+               
+                aksesuarDurumu.comboBoxAksesuarDurumu(getIndex, modelKart, tableAksesuarlar, columnsEtiket);
                 break;
                 case 3:
                     //Armalar
-                    
-                    
-                    modelArma.setColumnIdentifiers(columnsEtiket);
-                    tableAksesuarlar.setModel(modelArma);
-                    if(armaYuklemeDurumu)
-                    {
-                        armaTableReader();
-                    }
+                 
+                aksesuarDurumu.comboBoxAksesuarDurumu(getIndex, modelArma, tableAksesuarlar, columnsEtiket);
                 break;
                 default:
         }
@@ -1776,7 +1696,7 @@ public class TextileProject extends javax.swing.JFrame {
 
     private void buttonAksesuarDurumuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAksesuarDurumuActionPerformed
 
-               
+        dialogAksesuarDurumu.pack();
         dialogAksesuarDurumu.setVisible(true);
         dialogAksesuarDurumu.pack();
     }//GEN-LAST:event_buttonAksesuarDurumuActionPerformed
@@ -1792,10 +1712,11 @@ public class TextileProject extends javax.swing.JFrame {
     private void buttonTamamFermuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTamamFermuarActionPerformed
        
         
-         Object [] rows = new Object[3];
+         Object [] rows = new Object[4];
                   rows[0]= textFieldFermuarBoyu.getText();
                   rows[1]=textFieldFermuarRengi.getText();
                   rows[2]=textFieldFermuarAdet.getText();
+                  rows[3]= LocalDate.now();
                   if(!rows[0].equals("") && !rows[1].equals("") && !rows[2].equals(""))
                   {
                   modelFermuar.addRow(rows);
@@ -1814,39 +1735,20 @@ public class TextileProject extends javax.swing.JFrame {
         {
             case 0:
                 //Fermuarlar
-               
-                 labelFermuarBoyu.setText( getName + " boyunu giriniz");
-                 labelFermuarRengi.setText( getName + " rengini giriniz");
-                 labelFermuarAdet.setText(getName + " adetini giriniz");
-        dialogFermuarEkle.setVisible(true);   
-        dialogFermuarEkle.pack(); 
-                                    
-                
+                aksesuarDurumu.aksesuarEkle(getIndex, getName, labelFermuarBoyu, labelFermuarRengi,labelFermuarAdet, dialogFermuarEkle);
+                     
                 break;
             case 1:
                 //Etiketler
-                
-                
-               System.out.println(getName);   
-                 labelAksesuarTuru.setText(getName + " türünü giriniz.");
-                 labelAksesuarSayisi.setText( getName + " adetini giriniz.");
-        dialogAksesuarEkle.setVisible(true);   
-        dialogAksesuarEkle.pack();  
-                
+                aksesuarDurumu.aksesuarEkle(getIndex, getName, labelAksesuarTuru, labelAksesuarSayisi, null, dialogAksesuarEkle);
                 break;
                 case 2:
                     //Kartlar
-                    labelAksesuarTuru.setText(getName + " türünü giriniz.");
-                 labelAksesuarSayisi.setText( getName + " adetini giriniz.");
-        dialogAksesuarEkle.setVisible(true);   
-        dialogAksesuarEkle.pack();
+                aksesuarDurumu.aksesuarEkle(getIndex, getName, labelAksesuarTuru, labelAksesuarSayisi, null, dialogAksesuarEkle);
                 break;
                 case 3:
                     //Armalar
-                    labelAksesuarTuru.setText(getName + " türünü giriniz.");
-                 labelAksesuarSayisi.setText( getName + " adetini giriniz.");
-        dialogAksesuarEkle.setVisible(true);   
-        dialogAksesuarEkle.pack();
+                aksesuarDurumu.aksesuarEkle(getIndex, getName, labelAksesuarTuru, labelAksesuarSayisi, null, dialogAksesuarEkle);
                 break;
                 default:
         }
@@ -1859,9 +1761,10 @@ public class TextileProject extends javax.swing.JFrame {
 
     private void buttonAksesuarTamamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAksesuarTamamActionPerformed
        
-        Object [] rows = new Object[2];
+        Object [] rows = new Object[3];
                   rows[0]= textFieldAksesuarTuru.getText();
                   rows[1]=textFieldAksesuarSayisi.getText();
+                  rows[2] = LocalDate.now();
                 
                   if(!rows[0].equals("") && !rows[1].equals(""))
                   {
@@ -1878,16 +1781,56 @@ public class TextileProject extends javax.swing.JFrame {
 
     private void buttonAksesuarTabloYukleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAksesuarTabloYukleActionPerformed
 
+        switch(getIndex)
+        {
+                case 0:
+                //Fermuarlar
+               
+                aksesuarDurumu.aksesuarSil(modelFermuar, tableAksesuarlar);
+                break;
+                case 1:
+                //Etiketler
+                
+               aksesuarDurumu.aksesuarSil(modelEtiket, tableAksesuarlar);
+                break;
+                case 2:
+                    //Kartlar
+               
+                aksesuarDurumu.aksesuarSil(modelKart, tableAksesuarlar);
+                break;
+                case 3:
+                    //Armalar
+                 
+                aksesuarDurumu.aksesuarSil(modelArma, tableAksesuarlar);
+                break;
+                default:
+        }
+       
     }//GEN-LAST:event_buttonAksesuarTabloYukleActionPerformed
 
     private void buttonDukkandakiUrunlerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDukkandakiUrunlerActionPerformed
+
+        Object[][] dukkandakiUrunBilgileri = dukkandakiUrunler.getDukkandakiUrunBilgileri();
+        if(dukkandakiUrunBilgileri.length !=0){
+            if(dukkandakiUrunler.getModelDukkandakiUrunlerYuklemeDurumu())
+            {
+        for (int i = 0; i < dukkandakiUrunBilgileri.length; i++) {
+            modelDukkandakiUrunler.addRow(dukkandakiUrunBilgileri[i]);
+        }}
         
+        }
+        tableDukkandakiUrunler.setModel(modelDukkandakiUrunler);
+        dukkandakiUrunler.setModelDukkandakiUrunlerYuklemeDurumu(false);
+        dialogDukkandakiUrunler.pack();
         dialogDukkandakiUrunler.setVisible(true);
         dialogDukkandakiUrunler.pack();
     }//GEN-LAST:event_buttonDukkandakiUrunlerActionPerformed
     
     private void buttonModelEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModelEkleActionPerformed
-
+        
+        modelTableEkleEnable = true;
+        modelTableDüzenleEnable = false;
+        SilButonuAktiflikDurumu = false;
         butunBilgileriEldeEt = false;
         
         textFieldModelIsmi.setText("");
@@ -1901,11 +1844,10 @@ public class TextileProject extends javax.swing.JFrame {
         textFieldFermuarFiyat.setText("");
         textFieldAksesuarFiyat.setText("");
         textFieldFasonFiyat.setText("");
+        dialogModelEkleme.pack();
         dialogModelEkleme.setVisible(true);
         dialogModelEkleme.pack();
-        modelTableEkleEnable = true;
-        modelTableDüzenleEnable = false;
-        SilButonuAktiflikDurumu = false;
+        
     }//GEN-LAST:event_buttonModelEkleActionPerformed
 
     private void buttonMaliyetHesaplamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMaliyetHesaplamaActionPerformed
@@ -1922,15 +1864,7 @@ public class TextileProject extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
             }
-           /* JFileChooser chooser = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("Text field","txt");
-            chooser.setCurrentDirectory(new File("."));
-            chooser.setFileFilter(filter);
-            chooser.showOpenDialog(this);
-            String path = chooser.getSelectedFile().getPath();
-            fileFermuar = new File(path);*/
-                        
-        }
+                  }
         try {
  
             
@@ -1941,16 +1875,20 @@ public class TextileProject extends javax.swing.JFrame {
             
             for (int i = 0; i <lines.length; i++)
             {
-             String[] row = lines[i].toString().split(" ");
+             String[] row = lines[i].toString().split("tF3sjrG2dB");
                 System.out.println(Arrays.toString(row));
              modelModelBilgi.addRow(row);
              
             }
+            br.close();
+            reader.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
+        }    catch (IOException ex) {
+                 Logger.getLogger(TextileProject.class.getName()).log(Level.SEVERE, null, ex);
+             }
         }
-        }
-       
+        dialogMaliyetHesaplama.pack();
         dialogMaliyetHesaplama.setVisible(true);
         dialogMaliyetHesaplama.pack();
         modelTableYuklemeDurumu =false;
@@ -2154,14 +2092,19 @@ public class TextileProject extends javax.swing.JFrame {
          
             System.out.println( maaliyetHesaplama(kumasBirimFiyat, gidenKumasMetresi, astarBirimFiyat, gidenAstarMetresi, polarBirimFiyatı, gidenPolarFiyatı, ribanaToplamFiyat, fermuarToplamFiyat, aksesuarToplamFiyat, fasonParası));
         result = maaliyetHesaplama(kumasBirimFiyat, gidenKumasMetresi, astarBirimFiyat, gidenAstarMetresi, polarBirimFiyatı, gidenPolarFiyatı, ribanaToplamFiyat, fermuarToplamFiyat, aksesuarToplamFiyat, fasonParası);
+            System.out.println(modelTableEkleEnable);
         if(modelTableEkleEnable)
         {
         Object rows[] = new Object[3];
         rows[0] = textFieldModelIsmi.getText();
         rows[1] = result;
         rows[2] = LocalDate.now();
+            for (Object row : rows) {
+                System.out.println("textileproject.TextileProject.buttonModelMaliyetEkleActionPerformed()" + row.toString());
+            }
         if(!rows[0].equals("")&& !rows[1].equals("") && !rows[2].equals(""))
         {
+            System.out.println("textileproject.TextileProject.buttonModelMaliyetEkleActionPerformed() maliyet ekleme");
             modelModelBilgi.addRow(rows);
             tableModelBilgileri.setModel(modelModelBilgi);
         }
@@ -2301,6 +2244,7 @@ public class TextileProject extends javax.swing.JFrame {
        if( tableModelBilgileri.isRowSelected(tableModelBilgileri.getSelectedRow()))
        {
            modelDuzenlemeBilgileriniGoster(tableModelBilgileri.getSelectedRow());
+           dialogModelEkleme.pack();
            dialogModelEkleme.setVisible(true);
            dialogModelEkleme.pack();
            System.out.println(tableModelBilgileri.getSelectedRow());
@@ -2328,6 +2272,7 @@ public class TextileProject extends javax.swing.JFrame {
 
     private void buttonDukkandakiUruneModelEkleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDukkandakiUruneModelEkleActionPerformed
         // TODO add your handling code here:
+        dialogDukkanaUrunEkle.pack();
         dialogDukkanaUrunEkle.setVisible(true);
         dialogDukkanaUrunEkle.pack();
 
@@ -2335,25 +2280,12 @@ public class TextileProject extends javax.swing.JFrame {
 
     private void buttonFotoDegistirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFotoDegistirActionPerformed
 
-        chooserlabel.setCurrentDirectory(new File("."));
-
-        // show file chooser dialog
-        int result = chooserlabel.showOpenDialog(TextileProject.this);
-
-        // if image file accepted, set it as icon of the label
-        if (result == JFileChooser.APPROVE_OPTION)
-        {
-            String name = chooserlabel.getSelectedFile().getPath();
-            ImageIcon icon = new ImageIcon(name);
-            if (icon.getIconWidth() > labelUrunResim.getWidth())
-            {
-                icon = new ImageIcon(icon.getImage().getScaledInstance(
-                    labelUrunResim.getWidth(), -1, Image.SCALE_DEFAULT));
-
-            labelUrunResim.setIcon(icon);
-        }
+        
+     dukkandakiUrunler.dukkandakiUrunlerinFotosunuGuncelle(dialogDukkandakiUrunler, tableDukkandakiUrunler, labelUrunResim);
     }//GEN-LAST:event_buttonFotoDegistirActionPerformed
-    }
+    
+       
+    
     private void buttonDukkanaUrunEkleTamamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDukkanaUrunEkleTamamActionPerformed
         // TODO add your handling code here:
        //Düzenlenecek...
@@ -2371,8 +2303,17 @@ public class TextileProject extends javax.swing.JFrame {
            * dukkandakiUrunler.UrunBilgileriEkle fonksiyonunda gerekli bilgiler
            * parametre yoluyla alınıt ve urunEkle Object dizisine atanır.
            */
-           Object[] urunEkle = dukkandakiUrunler.UrunBilgileriEkle(modelIsmi, kumasTuru, bedenSayısı, toplamAdet,pathIsEmpty);
+          
+            Object[] urunEkle = new Object[6];
+            Object[] bilgileriAl = dukkandakiUrunler.UrunBilgileriEkle(modelIsmi, kumasTuru, bedenSayısı, toplamAdet,pathIsEmpty);
+            for (int i = 0; i < bilgileriAl.length; i++) {
+            urunEkle[i] = bilgileriAl[i];
+        }
+            Object tarihIleResmiYerDegistir = urunEkle[4];
+            urunEkle[4] = LocalDate.now();
+            urunEkle[5] = tarihIleResmiYerDegistir;
        System.out.println("Urunekle arrayi = "+ Arrays.deepToString(urunEkle));
+      
        if(urunEkle.length !=0 && !pathIsEmpty.isEmpty())
        {
            /*
@@ -2384,8 +2325,9 @@ public class TextileProject extends javax.swing.JFrame {
        textfieldDukkanaUrunKumasTuru.setText("");
        textfieldDukkanaUrunModelIsmi.setText("");
        textfieldDukkanaUrunToplamAdet.setText("");
-       Object[][]row =dukkandakiUrunler.getDukkandakiUrunBilgileri(modelDukkandakiUrunler.getRowCount());
-       dukkandakiUrunler.kullanıcıVerileriniKaydet(row,urunEkle,modelDukkandakiUrunler.getRowCount());
+       Object[][]gecmisBilgilerDizisi =dukkandakiUrunler.getDukkandakiUrunBilgileri();
+       System.out.println("gecmisBilgilerDizisi arayinin değeri = "+ Arrays.deepToString(gecmisBilgilerDizisi));
+       dukkandakiUrunler.kullanıcıVerileriniKaydet(gecmisBilgilerDizisi,urunEkle,modelDukkandakiUrunler.getRowCount(),modelDukkandakiUrunler.getColumnCount()+1);
        
        /*
        DukkanaUrunuEkle dialog'da tamam butonuna basıldıktan sonra 
@@ -2400,7 +2342,7 @@ public class TextileProject extends javax.swing.JFrame {
        else if(!dukkandakiUrunler.checkInputIsANumber(bedenSayısı))JOptionPane.showMessageDialog(dialogDukkanaUrunEkle, "Beden sayısı kısmı boş veya hatalı giriş");
        else if(!dukkandakiUrunler.checkInputIsANumber(toplamAdet))JOptionPane.showMessageDialog(dialogDukkanaUrunEkle, "Toplam Adet kısmı boş veya hatalı giriş");
        //JOptionPane.showMessageDialog(dialogDukkanaUrunEkle, "Resim yolunu belirtiniz.");
-         
+      
          
          
     }//GEN-LAST:event_buttonDukkanaUrunEkleTamamActionPerformed
@@ -2418,18 +2360,66 @@ public class TextileProject extends javax.swing.JFrame {
      
     }//GEN-LAST:event_buttonDukkanaUrunModelResmiSecActionPerformed
 
+    private void tableDukkandakiUrunlerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableDukkandakiUrunlerKeyTyped
+        // TODO add your handling code here:
+                  
+
+    }//GEN-LAST:event_tableDukkandakiUrunlerKeyTyped
+
+    private void tableDukkandakiUrunlerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableDukkandakiUrunlerKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_tableDukkandakiUrunlerKeyPressed
+
+    private void tableDukkandakiUrunlerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDukkandakiUrunlerMousePressed
+        // TODO add your handling code here:
+         if(tableDukkandakiUrunler.isRowSelected(tableDukkandakiUrunler.getSelectedRow()))
+       {
+           Object[][] urunBilgileriDizisi = dukkandakiUrunler.getDukkandakiUrunBilgileri();
+           Object[] secilenDizininResmi = urunBilgileriDizisi[tableDukkandakiUrunler.getSelectedRow()];
+           String resimYolu = (String) secilenDizininResmi[5];
+           ImageIcon resimDegistirIcon = new ImageIcon(resimYolu);
+           if (resimDegistirIcon.getIconWidth() > labelUrunResim.getWidth())
+            {
+                resimDegistirIcon = new ImageIcon(resimDegistirIcon.getImage().getScaledInstance(
+                    labelUrunResim.getWidth(), -1, Image.SCALE_DEFAULT));
+  
+        }       
+           labelUrunResim.setIcon(resimDegistirIcon);
+           dialogDukkandakiUrunler.pack();
+       }
+    }//GEN-LAST:event_tableDukkandakiUrunlerMousePressed
+
     private void tableDukkandakiUrunlerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDukkandakiUrunlerMouseClicked
 
         // TODO add your handling code here:
-        if(!tableDukkandakiUrunler.isEditing())
-        {
-          
-        }
-        if(tableDukkandakiUrunler.isEditing())
-        {
-            tableDukkandakiUrunler.setEnabled(true);
-        }
+      
     }//GEN-LAST:event_tableDukkandakiUrunlerMouseClicked
+
+    private void buttonDukkankadiUrunlerTabloSilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDukkankadiUrunlerTabloSilActionPerformed
+
+        if(modelDukkandakiUrunler.getRowCount()!=0)
+        {
+            System.out.println("textileproject.TextileProject.buttonDukkankadiUrunlerTabloSilActionPerformed()");
+         dukkandakiUrunler.tablodanBirSutunSil(tableDukkandakiUrunler, modelDukkandakiUrunler,dialogDukkandakiUrunler,labelUrunResim);
+        }else{
+            JOptionPane.showMessageDialog(dialogDukkandakiUrunler, "Tablo boşken silme işlemi yapamazsınız");
+        }
+    }//GEN-LAST:event_buttonDukkankadiUrunlerTabloSilActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+          if(table.getSelectedRow() !=-1)
+    {
+            model.removeRow(table.getSelectedRow());
+            table.setModel(model);
+        
+    }    
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void dialogDukkandakiUrunlerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dialogDukkandakiUrunlerMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dialogDukkandakiUrunlerMousePressed
     
     /**
      * @param args the command line arguments
@@ -2477,6 +2467,7 @@ public class TextileProject extends javax.swing.JFrame {
     private javax.swing.JButton buttonDukkanaUrunModelResmiSec;
     private javax.swing.JButton buttonDukkandakiUruneModelEkle;
     private javax.swing.JButton buttonDukkandakiUrunler;
+    private javax.swing.JButton buttonDukkankadiUrunlerTabloSil;
     private javax.swing.JButton buttonFotoDegistir;
     private javax.swing.JButton buttonKumasEkle;
     private javax.swing.JButton buttonKumasTopuEkle;
@@ -2495,6 +2486,7 @@ public class TextileProject extends javax.swing.JFrame {
     private javax.swing.JDialog dialogFermuarEkle;
     private javax.swing.JDialog dialogMaliyetHesaplama;
     private javax.swing.JDialog dialogModelEkleme;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2505,6 +2497,7 @@ public class TextileProject extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2593,11 +2586,11 @@ public class TextileProject extends javax.swing.JFrame {
  private  File fileModelBilgi = new File("modelBilgi.txt");
  private  File fileModelDuzenleBilgileri = new File("modelDuzenleBilgileri.txt");
  private final JFileChooser chooserlabel;
- private final Object [] columns = {"Kumaş Türü","Kumaş Rengi","Kumaş Sayısı"};
- private final Object [] columnsFermuar = {"Renk","Boy","Adet"};
- private final Object [] columnsEtiket = {"Tür","Adet"};
+ private final Object [] KumasTopucolumns = {"Kumaş Türü","Kumaş Rengi","Kumaş Sayısı","Düzenlenme Tarihi"};
+ private final Object [] columnsFermuar = {"Renk","Boy","Adet","Düzenlenme Tarihi"};
+ private final Object [] columnsEtiket = {"Tür","Adet","Düzenlenme Tarihi"};
  private final Object [] columnsModel = {"Model İsmi","Maliyeti","Düzenlenme Tarihi"};
- private final Object [] columnsDukkandakiUrunler = {"Model Adı","Kumaş Türü","Beden Sayısı","Toplam Adet"};
+ private final Object [] columnsDukkandakiUrunler = {"Model Adı","Kumaş Türü","Beden Sayısı","Toplam Adet","Düzenlenme Tarihi"};
  private String getName;
  private String haveApathName;
  private int getIndex;
@@ -2611,6 +2604,7 @@ public class TextileProject extends javax.swing.JFrame {
  private boolean butunBilgileriEldeEt;
  private boolean SilButonuAktiflikDurumu;
  private DukkandakiUrunler dukkandakiUrunler;
+ private AksesuarDurumu aksesuarDurumu;
 
 class WindowsFermuarListener implements WindowListener
 {
@@ -2657,7 +2651,7 @@ private DefaultTableModel models;
             for (int i = 0; i < models.getRowCount(); i++) {
                 for (int j = 0; j < models.getColumnCount(); j++) {
                     
-                    bw.write(models.getValueAt(i, j).toString()+" ");
+                    bw.write(models.getValueAt(i, j).toString()+"tF3sjrG2dB");
                     
                 }
                 bw.newLine();
