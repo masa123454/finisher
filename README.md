@@ -1,5 +1,5 @@
-# finisher
-Java Swing ile yapılan örnek Tekstil Projesi(Sample Textile project made by JAVA Swing)
+# Java Swing ile yapılan örnek Tekstil Projesi(Sample Textile project made by JAVA Swing)
+
 
 Projenin içerisinde "Kumaş Topu Durumu","Aksesuar Durumu", "Maliyet Hesaplama", ve "Dükkandaki Ürünler" olmak üzere toplam 4 bölümden oluşmaktadır.
 Bu projenin yapımı hala devam edilmektedir bu yüzden her bölümünde eksik kısımlar mevcuttur. TextileProject dosyası Netbeans Apache ile yazılmıştır. Kullanılan java sürümü 11.0.1 dir.
